@@ -22,6 +22,8 @@ const gameStart = (value) =>{
     if(value === "start"){
         console.log("game has started");
         colorDefault();
+        let status = document.getElementById("status");
+        status.innerText = "Begin by moving your mouse over the S .";
         gamehasStarted = true;
     }
 }
@@ -32,11 +34,17 @@ const gameEnd = () => {
 const collisionCheck = (value) => {
     if((value === "") || (value === "boundary1")){
         colorRed();
+        let status = document.getElementById("status");
+        status.innerText = "You lost";
+        gamehasStarted = true;
         console.log("game has ended");
         gameEnd();
     }
     else if(value === "end"){
-        alert("You Won");
+        
+        let status = document.getElementById("status");
+        status.innerText = "You won";
+        gamehasStarted = true;
         console.log("game has ended");
         gameEnd();
     }
