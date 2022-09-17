@@ -1,5 +1,6 @@
 
 let gamehasStarted = false;
+let score = 0;
 
 const colorRed = () => {
    
@@ -23,7 +24,7 @@ const gameStart = (value) =>{
         console.log("game has started");
         colorDefault();
         let status = document.getElementById("status");
-        status.innerText = "Begin by moving your mouse over the S .";
+        status.innerText = "Begin by moving your mouse over the S . Current score is " + score;
         gamehasStarted = true;
     }
 }
@@ -35,7 +36,8 @@ const collisionCheck = (value) => {
     if((value === "") || (value === "boundary1")){
         colorRed();
         let status = document.getElementById("status");
-        status.innerText = "You lost";
+        score -= 10;        
+        status.innerText = "You lost. Current score " + score;
         gamehasStarted = true;
         console.log("game has ended");
         gameEnd();
@@ -43,7 +45,8 @@ const collisionCheck = (value) => {
     else if(value === "end"){
         
         let status = document.getElementById("status");
-        status.innerText = "You won";
+        score += 5;
+        status.innerText = "You won. Current score " + score;
         gamehasStarted = true;
         console.log("game has ended");
         gameEnd();
