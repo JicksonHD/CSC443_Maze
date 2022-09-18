@@ -2,6 +2,7 @@
 let gamehasStarted = false;
 let score = 0;
 
+
 const colorRed = () => {
    
     const walls = document.getElementsByClassName("boundary");
@@ -32,7 +33,7 @@ const gameEnd = () => {
     gamehasStarted = false;
 }
 
-const collisionCheck = (value) => {
+const check = (value) => {
     if((value === "") || (value === "boundary1")){
         colorRed();
         let status = document.getElementById("status");
@@ -61,7 +62,7 @@ window.onload = () => {
         gameStart(value);
 
         if(gamehasStarted){
-            collisionCheck(value);
+            check(value);
         }
     });
 }
