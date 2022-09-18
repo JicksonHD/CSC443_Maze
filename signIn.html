@@ -1,23 +1,37 @@
-<h1>Sign In</h1>
+
+<html>
+
+<body>
+    
+    <h1>Sign In</h1>
     <p>Please fill in this form to log in into your account.</p>
     <hr>
 
-    <form>
+    <form role="form" onsubmit="signIn(event);" autocomplete="off">
 
-        <input type="text" placeholder="Enter username" required>
+        <div class="form-group">
+            <input id="uname" name="uname" type="text" placeholder="Enter username" required>
+        </div>
+        
     <br>
     <br>
-    <input type="password" placeholder="Enter password" required>
+    <div class="form-group">
+        <input id="pwd" name="pwd" type="password" placeholder="Enter password" required>
+    </div>
 
     <br>
-
-    <a href="game.html">
-
+    <div class="form-group">
         <button type="submit" >Log in</button>
-    </a>
-
+    </div>
 
     </form>
     
+    <script type="text/javascript" src="credentials.js"></script>
 
     
+
+</body>
+
+
+</html>
+
