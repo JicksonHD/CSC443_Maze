@@ -22,6 +22,8 @@ const colorDefault = () => {
 
 const gameStart = (value) =>{
     if(value === "start"){
+        localStorage.getItem(score);
+        console.log(localStorage);
         console.log("game has started");
         colorDefault();
         let status = document.getElementById("status");
@@ -50,6 +52,8 @@ const check = (value) => {
         status.innerText = "You won. Current score " + score;
         gamehasStarted = true;
         console.log("game has ended");
+      //  localStorage.setItem(score);
+        console.log(localStorage);
         gameEnd();
     }
 }
